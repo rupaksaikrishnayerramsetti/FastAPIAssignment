@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# C extensions
+*.py[cod]
+
+# C++ extensions
+*.cpp
+
+# Object files
+*.o
+
+# IDE temporary files
+*.swp
+
+# Python temporary files
+*.py[co]
+
+# Sphinx documentation
+docs/_build/
+
+# IPython Notebook
+*.ipynb_checkpoints
+
+# Spyder project settings
+.spyderproject*
+
+# Spyder temporary files
+.spyder*
+
+# Anaconda directory
+conda*
+
+# pipenv
+Pipfile.lock
+
+# pip
+pip-wheel
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Vim temporary files
+*.swp
+
+# Vim backup files
+*.bak
+
+# Vim swap files
+*.swp
+
+# Vim undo files
+*.un~
+
+# Virtual environment
+.env/
+venv/
+env/
