@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from Constants import DB_URL
 
-SQL_ALCHEMY_DB_URL = "postgresql://postgres:root@localhost:5432/Practice1"
+SQL_ALCHEMY_DB_URL = DB_URL
 
 engine = create_engine(
     SQL_ALCHEMY_DB_URL

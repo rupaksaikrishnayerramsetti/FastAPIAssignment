@@ -4,21 +4,14 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-import os
-import urllib.parse
+from Constants import DB_URL
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 section = config.config_ini_section
-DB_NAME = "Practice"
-DB_HOST = "localhost"
-DB_PORT = "5432"
-DB_USER = "postgres"
-DB_PASS = "root"
 
-# connection_string = "sqlite:///./test.db"
-connection_string = f'postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+connection_string = DB_URL
 
 context.config.set_main_option('sqlalchemy.url', connection_string)
 

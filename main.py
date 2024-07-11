@@ -1,15 +1,19 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from typing import List, Optional
-from uuid import UUID, uuid4
+from fastapi import FastAPI
+from Apis import CreateUsersApi, LoginApi
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-@app.get("/")
-def read():
-    return {"hello": "world"}
+origins = ['*']
 
-if __name__ == "__main__":
-    import uvicorn
+app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-    uvicorn.run(app, port=9000)
+app.include_router(CreateUsersApi.router, prefix="/user", tags=["User"])
+
+app.include_router(LoginApi.router, prefix="/Login", tags=["Login"])
